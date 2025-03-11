@@ -322,7 +322,7 @@
         flex: initial;       /* Verwijder eventuele flex-eigenschappen */
         width: 100%;        /* Zorgt ervoor dat de afbeelding de breedte van de gridcel vult */
         height: auto;       /* Houdt de originele aspect ratio aan */
-        padding: 0;         /* Verwijder eventueel extra padding */
+        padding-top: 1rem;         /* Verwijder eventueel extra padding */
     }
 
     footer {
