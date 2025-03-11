@@ -316,6 +316,14 @@
         flex: 1; 
         padding: 1.5em;
     }
+/*/probleem oplossen met vervorming foto's visie /*/
+    .columns .product__img {
+        display: block;     /* Zet de afbeelding terug naar een block-element */
+        flex: initial;       /* Verwijder eventuele flex-eigenschappen */
+        width: 100%;        /* Zorgt ervoor dat de afbeelding de breedte van de gridcel vult */
+        height: auto;       /* Houdt de originele aspect ratio aan */
+        padding: 0;         /* Verwijder eventueel extra padding */
+    }
 
     footer {
         background: #333;
