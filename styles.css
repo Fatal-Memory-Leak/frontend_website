@@ -1,0 +1,415 @@
+:root {
+    --clr-primary-300: #f3eed9;
+    --clr-primary-400:  #9dd49f;
+
+    --clr-neutral-100: #ebf0d0;
+    --clr-primary-900: #2a542b;
+
+    --cl-bruin-100: #f5cda5;
+
+    --ff-primary: 'Roboto', sans-serif;
+    --ff-accent: 'Playfair Display', serif;
+
+    --border-radius: 8px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: var(--ff-primary);
+    color: var(--clr-primary-900);
+    font-size: 1.125rem;
+}
+
+body {
+    margin: 0;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1; /* Zorgt ervoor dat de main-sectie de beschikbare ruimte opvult */
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+section {
+    padding: 1.5em 1em;
+
+}
+
+/*Typografie*/
+
+h1, h2, h3, h4, p {
+    margin: 0;
+}
+
+h2, h3 {
+    font-family: var(--ff-primary);
+    line-height: 1.2;
+
+}
+
+h2 {
+    font-size: 1.65rem;
+}
+
+p {
+    margin-bottom: 0.85em;
+    line-height: 1.3;
+}
+
+p:last-child {
+    margin-bottom: 0;
+}
+
+.section-title {
+    padding-bottom: 2rem;
+}
+
+.section-title-small {
+    font-size: 1.5rem;   
+}
+
+.section-title-small small {
+    font-size: 0.7em;
+    display: block;
+}
+
+.text-primary {
+    color: var(--clr-primary-400);  
+    text-shadow: 0.5px 0.5px 0.5px var(--clr-primary-900);
+}   
+
+.logo {
+    font-family: var(--ff-accent);
+    text-align: center;
+    padding-bottom: 3%;
+}
+
+.logo a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.64) ;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    padding: 20px;
+    background: white;
+    width: 90%;
+    max-width: 400px;
+    margin: 0 auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.form-item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.form-item label {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: var(--clr-primary-900);
+}
+
+.form-input, .form-textarea, .form-button {
+    font-family: inherit;
+    font-size: 1rem;
+    border: 1px solid var(--clr-primary-900);
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.form-textarea {
+    min-height: 100px;
+    resize: vertical; /* Gebruiker kan de grootte aanpassen */
+    height: 10em; /* Meer ruimte voor het tekstvak creëren */
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+    opacity: 0.6;
+    color: var(--clr-primary-900);
+}
+
+.form-button {
+    background: var(--clr-primary-900);
+    color: var(--clr-neutral-100);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.form-button:hover {
+    background: rgba(8, 75, 8, 0.8);
+}
+
+.contact-background {
+    background: var(--clr-primary-300) url(images/icononly_transparent_nobuffer.png) space center center;
+    background-size: 20%;
+}
+
+/* Responsief ontwerp */
+@media only screen and (min-width: 550px) {
+    .form {
+        max-width: 500px;
+        border: 2px solid var(--clr-primary-900);
+    }
+}
+
+@media (max-width: 1500px) {
+    .contact-background {
+        background-size: 50%; /* Grotere logo's zodat er minder herhalingen zijn */
+        background-blend-mode:color-dodge /* Maakt de groene afbeelding zachter (wit) */
+    }
+}
+ 
+/* Navigation */
+
+header {
+    padding: 1em 0 0;
+}
+
+nav ul {
+    display: flex;  
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    justify-content: space-around;
+    background: var(--cl-bruin-100);
+}
+
+nav a {
+    display: inline-block;
+    padding: 0.5em;
+    color: rgba(0, 0, 0, 0.616);
+    text-decoration: none;
+}
+
+nav a:hover,
+nav a:focus {
+    color: var(--clr-primary-900);
+    text-decoration: underline;
+}
+
+.here {
+    text-decoration: underline;
+}
+
+/* Buttons */
+
+.btn {
+    padding: .75em;
+    color: #f3eed9;
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    text-align: center;
+    display: inline-block;
+    grid-column: 2;
+}
+
+.btn-primary {
+    background-color: var(--clr-primary-900);
+    line-height: 1.5;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
+}
+
+@media (max-width: 55em) {
+    .btn {
+        grid-column: 1; /* Alles in 1 kolom bij kleinere schermen, ook de knop */
+    }
+}
+
+/* Homepage styles */
+
+.intro {
+    background: var(--clr-primary-300);
+}
+
+.korte-info {
+    background-color: var(--clr-primary-300);
+    display: flex;
+    flex-direction: column;
+    padding: 3em 1em;
+}
+
+.korte-info__intro {
+    background-image: url(images/massage_rug.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 2em 1em;
+    text-align: center;
+    color:rgba(255, 255, 255, 0.85);
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.8);
+    filter: grayscale(80%); /* Zet de afbeelding om in grijstinten */
+}
+
+.korte-info__body {
+    padding: 2em 1em 1em;
+}
+
+.visie {
+    background-color: #C4A484;
+}
+
+.boek-afspraak {
+    background-color: var(--clr-primary-300);
+}
+
+.products {
+    display: flex;
+    flex-direction: column;
+    max-width: 30rem;
+    margin: 0 auto; 
+}
+
+@media (min-width: 40rem) { /* Vanaf een breedte van 640px */
+    .products {
+        flex-direction: row; /* Naast elkaar op grotere schermen */
+        justify-content: center; /* Zorgt ervoor dat de blokken gecentreerd blijven */
+        gap: 2rem; /* Ruimte tussen de blokken */
+        max-width: 100%; /* Breedte aanpassen zodat het flexibele layout ondersteunt */
+    }
+}
+
+.product {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Zorgt dat de knop onderaan staat */
+    flex: 1; /* Zorgt voor gelijke hoogte van de kaarten */
+    background: var(--clr-primary-400);
+    padding: 1em;
+    border-radius: 8%;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 0 1em var(--clr-primary-900);
+}
+
+.product__img, .massage {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    flex: 1; 
+    padding: 1.5em;
+}
+
+footer {
+    background: #333;
+    padding: 1em 1em;
+    color:#f3eed9;
+}
+
+@media only screen and (min-width: 750px) {
+    section {
+        padding-top: 3em;
+        padding-bottom: 0px;
+    }
+
+    .korte-info {
+        flex-direction: row;
+    }
+    
+    .korte-info__intro, .korte-info__body {
+        flex: 0 1 50%;
+        align-self: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .korte-info__intro {
+        text-align: right;
+    }
+    .korte-info__intro > * {
+        max-width: 27rem;
+        margin-left: auto;
+    }
+
+    .korte-info__body {
+        text-align: left;
+    }
+    .korte-info__body > * {
+        max-width: 27rem;
+        margin-right: auto;
+    }
+
+}
+
+/*Over -> Grid */
+
+.columns {
+    margin: 5rem auto;
+    width: min(90%, 75rem);
+    display: grid;
+    grid-template-columns: 1fr; /* Eén kolom op mobiele apparaten */
+    gap: 1em;
+    background: var(--clr-primary-300);
+}
+
+.columns section h2 {
+    text-align: center; /* Zorgt ervoor dat de tekst gecentreerd wordt */
+    align-self: center; /* Centreert het item binnen de flex-container */
+    width: 100%; /* Zorgt dat de titel zich over de hele breedte verspreidt */
+}
+
+.columns section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center; /* Centraal uitlijnen van tekst */
+    padding: 2em;
+    background: var(--clr-primary-400);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.columns img {
+    width: 100%; /* Zorgt ervoor dat alle afbeeldingen even breed zijn */
+    max-width: 350px; /* Zorgt ervoor dat ze niet te groot worden */
+    height: auto;
+    border-radius: 5%;
+    margin-bottom: 1em;
+}  
+
+
+.columns img:hover {
+    transform: scale(1.05);
+}
+
+.columns section p {
+    max-width: 50ch; /* Houd de tekst op een comfortabele leesbreedte */
+}
+
+.background {
+    background: var(--clr-primary-300);
+}
+
+@media (min-width: 55em) {
+    .columns {
+        grid-template-columns: repeat(3, 1fr); /* Drie gelijke kolommen */
+    }
+}
